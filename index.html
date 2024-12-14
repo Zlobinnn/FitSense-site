@@ -186,7 +186,7 @@
   }
 
   /* Анимация появления */
-  @keyframes fadeIn {
+  /*@keyframes fadeIn {
     from {
       opacity: 0;
       transform: translateY(-10px);
@@ -195,7 +195,49 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }*/
+
+  /* Медиазапрос для экранов меньше 480px */
+@media (max-width: 480px) {
+  .logo {
+    max-width: 50%; /* Уменьшаем логотип */
   }
+
+  .main h1 {
+    font-size: 20px; /* Уменьшаем заголовок */
+  }
+
+  .tagline {
+    font-size: 14px; /* Уменьшаем подзаголовок */
+  }
+
+  .product-image {
+    max-width: 90%; /* Уменьшаем изображение */
+    height: auto;
+  }
+
+  .old-price {
+    font-size: 20px; /* Уменьшаем старую цену */
+  }
+
+  .new-price {
+    font-size: 30px; /* Уменьшаем новую цену */
+  }
+
+  .highlight {
+    font-size: 16px; /* Уменьшаем текст "Только сегодня!" */
+  }
+
+  .btn-buy {
+    font-size: 14px; /* Уменьшаем размер кнопки */
+    padding: 10px 20px; /* Уменьшаем отступы на кнопке */
+  }
+
+  .footer p {
+    font-size: 12px; /* Уменьшаем размер текста в футере */
+  }
+}
+
 
   </style>
 </head>
