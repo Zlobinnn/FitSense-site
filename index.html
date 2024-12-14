@@ -24,6 +24,15 @@
       box-sizing: border-box;
     }
 
+    /* Центрирование и ограничение ширины для больших экранов */
+    @media (min-width: 1024px) {
+      .container {
+        max-width: 800px; /* Ширина содержимого на компьютере */
+        margin: 0 auto;   /* Центрирование по горизонтали */
+        padding: 40px;    /* Больше отступов */
+      }
+    }
+
     /* Шапка */
     .header {
       width: 100%;
@@ -82,15 +91,14 @@
     /* Цена */
     .price-container {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      margin: 10px 0;
-      box-sizing: border-box;
+      align-items: baseline;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
     }
 
     .old-price {
-      font-size: 18px;
+      font-size: 16px;
       color: #ff6e6e;
       text-decoration: line-through;
     }
@@ -145,36 +153,6 @@
       background: linear-gradient(to right, #e0f7fa, #ffffff);
       border-top: 3px solid #0070f3;
       box-sizing: border-box;
-    }
-
-    @media (max-width: 768px) {
-      .main h1 {
-        font-size: 22px;
-      }
-
-      .new-price {
-        font-size: 22px;
-      }
-
-      .btn-buy {
-        font-size: 14px;
-        padding: 12px 20px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .main h1 {
-        font-size: 20px;
-      }
-
-      .new-price {
-        font-size: 20px;
-      }
-
-      .btn-buy {
-        font-size: 12px;
-        padding: 10px 15px;
-      }
     }
   </style>
 </head>
