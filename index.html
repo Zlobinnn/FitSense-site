@@ -104,15 +104,33 @@
       text-decoration: line-through;
     }
 
-    .new-price {
-      font-size: 38px;
-      margin: 0;
-      font-weight: bold;
-      color: #2e7d32;
-      background: linear-gradient(to right, #a5d6a7, #66bb6a);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+   /* Анимация пульсации */
+@keyframes pulse {
+    0% {
+      transform: scale(1);
     }
+    50% {
+      transform: scale(1.1); /* Увеличение размера */
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .new-price {
+    font-size: 38px;
+    margin: 0;
+    font-weight: bold;
+    color: #2e7d32;
+    background: linear-gradient(to right, #a5d6a7, #66bb6a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Добавляем анимацию */
+    display: inline-block; /* Чтобы масштабирование работало корректно */
+    animation: pulse 1.5s infinite; /* Анимация с бесконечным повторением */
+  }
+
 
     /* Кнопка покупки */
     .btn-buy {
@@ -156,6 +174,29 @@
       border-top: 3px solid #0070f3;
       box-sizing: border-box;
     }
+
+    /* Яркий текст для акцента */
+  .highlight {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff4081;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in-out; /* Анимация появления */
+  }
+
+  /* Анимация появления */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   </style>
 </head>
 <body>
@@ -176,9 +217,11 @@
 
       <!-- Блок цен -->
       <div class="price-container">
-        <p class="old-price">$500</p>
-        <p class="new-price">$300</p>
+        <p class="highlight">Акция недели!</p>
+        <p class="old-price">$499</p>
+        <p class="new-price">$299</p>
       </div>
+      
 
       <!-- Кнопка -->
       <button class="btn-buy">
